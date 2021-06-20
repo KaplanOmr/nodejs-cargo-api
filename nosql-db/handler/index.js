@@ -4,6 +4,9 @@ const {
     checkToken,
     getCities,
     getCargoCompanies,
+    getBranchesCargoCity,
+    getBranchesCargo,
+    getBranchesCity,
 } = require("../function");
 
 function login(request, response) {
@@ -32,9 +35,41 @@ function cities(request, response) {
         response.status(statusCode).send(data);
     });
 }
+
 function cargoCompanies(request, response) {
     getCargoCompanies(function (data) {
         let statusCode = data.status ? 200 : 400;
+        response.status(statusCode).send(data);
+    });
+}
+
+function branchesCargoCity(request, response) {
+    let cargo = request.params.cargo;
+    let city = request.params.city;
+
+    getBranchesCargoCity(cargo, city, function (data) {
+        let statusCode = data.status ? 200 : 400;
+
+        response.status(statusCode).send(data);
+    });
+}
+
+function branchesCargo(request, response) {
+    let cargo = request.params.cargo;
+
+    getBranchesCargo(cargo, function (data) {
+        let statusCode = data.status ? 200 : 400;
+
+        response.status(statusCode).send(data);
+    });
+}
+
+function branchesCity(request, response) {
+    let city = request.params.city;
+
+    getBranchesCity(city, function (data) {
+        let statusCode = data.status ? 200 : 400;
+
         response.status(statusCode).send(data);
     });
 }
@@ -76,5 +111,8 @@ exports.handlers = {
     login: login,
     cities: cities,
     cargoCompanies: cargoCompanies,
+    branchesCargo: branchesCargo,
+    branchesCity: branchesCity,
+    branchesCargoCity: branchesCargoCity,
     authMiddleware: authMiddleware,
 };

@@ -97,3 +97,94 @@ exports.getCargoCompanies = function (cb) {
             cb(respond);
         });
 };
+
+exports.getBranchesCargoCity = function (cargo, city, cb) {
+    let respond = {
+        status: false,
+    };
+
+    Models.Branches.find({
+        cargo: cargo,
+        city: city,
+    })
+        .select(["-_id", "-__v"])
+        .then(function (data) {
+            if (!data.length) {
+                respond.err = "Branches empty";
+                cb(respond);
+                return;
+            }
+
+            respond.status = true;
+            respond.data = data;
+
+            cb(respond);
+            return;
+        })
+        .catch(function (err) {
+            console.log(err);
+            respond.err = "Request error";
+            cb(respond);
+            return;
+        });
+};
+
+exports.getBranchesCargo = function (cargo, cb) {
+    let respond = {
+        status: false,
+    };
+
+    Models.Branches.find({
+        cargo: cargo,
+    })
+        .select(["-_id", "-__v"])
+        .then(function (data) {
+            if (!data.length) {
+                respond.err = "Cargo branches empty";
+                cb(respond);
+                return;
+            }
+
+            respond.status = true;
+            respond.data = data;
+
+            cb(respond);
+            return;
+        })
+        .catch(function (err) {
+            console.log(err);
+            respond.err = "Request error";
+            cb(respond);
+            return;
+        });
+};
+
+exports.getBranchesCity = function (city, cb) {
+    let respond = {
+        status: false,
+    };
+
+    Models.Branches.find({
+        city: city,
+    })
+        .select(["-_id", "-__v"])
+        .then(function (data) {
+            if (!data.length) {
+                respond.err = "City branches empty";
+                cb(respond);
+                return;
+            }
+
+            respond.status = true;
+            respond.data = data;
+
+            cb(respond);
+            return;
+        })
+        .catch(function (err) {
+            console.log(err);
+            respond.err = "Request error";
+            cb(respond);
+            return;
+        });
+};
