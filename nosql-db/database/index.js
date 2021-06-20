@@ -11,19 +11,19 @@ mongoose.connect(globalConfig.conString, {
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
-const CargoCampanies = new Schema({
+const CargoCampany = new Schema({
     id: ObjectId,
     slug: String,
     name: String,
 });
 
-const Cities = new Schema({
+const City = new Schema({
     id: ObjectId,
     slug: String,
     name: String,
 });
 
-const CargoData = new Schema({
+const Branch = new Schema({
     id: ObjectId,
     cargo: String,
     city: String,
@@ -39,14 +39,14 @@ const User = new Schema({
     token: String,
 });
 
-const CargoModel = mongoose.model("CargoModel", CargoCampanies);
-const CitiesModel = mongoose.model("CitiesModel", Cities);
-const CargoDataModel = mongoose.model("CargoDataModel", CargoData);
-const UserModel = mongoose.model("UserModel", User);
+const CargoCompanyModel = mongoose.model("CargoCompanies", CargoCampany);
+const CityModel = mongoose.model("Cities", City);
+const BranchModel = mongoose.model("Branches", Branch);
+const UserModel = mongoose.model("Users", User);
 
 exports.Models = {
-    Cities: CitiesModel,
-    CargoData: CargoDataModel,
+    Cities: CityModel,
+    Branches: BranchModel,
     Users: UserModel,
-    Cargo: CargoModel,
+    CargoCompanies: CargoCompanyModel,
 };

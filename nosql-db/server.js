@@ -9,8 +9,12 @@ app.use(
         extended: true,
     })
 );
-app.get("/", handlers.main);
+
+app.post("/login", handlers.login);
+
+app.get("/cities", handlers.authMiddleware, handlers.cities);
+app.get("/cargo-companies", handlers.authMiddleware, handlers.cargoCompanies);
 
 app.listen(globalConfig.serverPort, () => {
-    console.log("Server on air port:" + globalConfig.serverPort);
+    console.log("Server on air. Port:" + globalConfig.serverPort);
 });
