@@ -1,0 +1,14 @@
+[
+    {
+        "slug": "aras",
+        "name": "Aras Kargo"
+    },
+    {
+        "slug": "yurtici",
+        "name": "Yurtiçi Kargo"
+    },
+    {
+        "slug": "ptt",
+        "name": "PTT Kargo"
+    }
+]
