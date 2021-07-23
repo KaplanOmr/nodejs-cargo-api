@@ -1,10 +1,8 @@
-# cargo-api
+# nodejs-cargo-api
 
 > Proje **NoSQL** ve **JSON** dosyasını veri tabanı olarak kullanan 2 alt koldan oluşmaktadır. Veri Tabanı türlerine göre klasör isimlendirmesi yapılarak birbirlerinden ayrılmıştır.
 
 ## Giriş
-
----
 
 Api'ye istek gönderebilmeniz için öncelikle giriş yapmanız gerekmektedir.
 
@@ -24,7 +22,6 @@ Bu işlem sonucunda sizlere **token** değeri gönderilmektedir. Bu tokeni istek
 
 ## Şehir Listesi
 
----
 
 Şube arama ve listeleme işlemlerinde kullanmanız illere ve illere ait sluglara ulaşabilirsiniz.
 
@@ -36,7 +33,6 @@ Belirtilen adrese _get_ ile istek göndermeniz yeterlidir.
 
 ## Kargo Firmaları
 
----
 
 Kargo şubelerini firmaya göre filtrelemek için firma adlarına ve sluglarına ihtiyacınız vardır. Bunları alt alanda belirtilen adresten _get_ isteği ile alabilirsiniz.
 
@@ -46,7 +42,6 @@ Kargo şubelerini firmaya göre filtrelemek için firma adlarına ve sluglarına
 
 ## Şubeler (Firma ve Şehir)
 
----
 
 Kargo firmasına ait belirli bir şehirdeki tüm şubeleri listelemek için kullanılır. İstek _get_ methodu ile gönderilmelidir.
 
@@ -56,7 +51,6 @@ Kargo firmasına ait belirli bir şehirdeki tüm şubeleri listelemek için kull
 
 ## Şubeler (Firma)
 
----
 
 Kargo firmasına ait tüm şubeleri listelemek için kullanılır. İstek _get_ methodu ile gönderilmelidir.
 
@@ -66,7 +60,6 @@ Kargo firmasına ait tüm şubeleri listelemek için kullanılır. İstek _get_ 
 
 ## Şubeler (Şehir)
 
----
 
 Şehirde bulunan tüm şubeleri listelemek için kullanılır. İstek _get_ methodu ile gönderilmelidir.
 
